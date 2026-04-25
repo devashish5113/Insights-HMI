@@ -67,7 +67,7 @@ extension StabilityData {
             CyclePoint(month: "Jan", value: 24.0, status: "Stability\nStable"),
             CyclePoint(month: "Feb", value: 24.8, status: "Stability\nImproving"),
             CyclePoint(month: "Mar", value: 27.2, status: "Stability\nImproving"),
-            CyclePoint(month: "Apr", value: 33.5, status: "Stability\nPeak")
+            CyclePoint(month: "Apr", value: 32.0, status: "Stability\nPeak")
         ],
         activeMonthIndex: 2,
         tooltip: "Stability\nImproving"
