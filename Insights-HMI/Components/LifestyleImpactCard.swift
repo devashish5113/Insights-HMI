@@ -64,7 +64,7 @@ struct LifestyleImpactCard: View {
 
     @ViewBuilder
     private func heatmapRow(_ row: LifestyleRow) -> some View {
-        HStack(spacing: 6) {
+        HStack(spacing: 4) {
             
             Text(row.label)
                 .font(.dmSansAxis)
