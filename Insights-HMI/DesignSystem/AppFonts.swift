@@ -6,6 +6,7 @@ private enum DMSans {
     static let regular  = "DMSans18pt-Regular"
     static let medium   = "DMSans18pt-Medium"
     static let semiBold = "DMSans18pt-SemiBold"
+    static let bold     = "DMSans18pt-Bold"
 }
 
 extension Font {
@@ -15,6 +16,8 @@ extension Font {
 
     
     static let dmSansSectionHead = Font.custom(DMSans.semiBold, size: 20)
+    
+    static let dmSansNavigationHead = Font.custom(DMSans.bold, size: 22)
 
     
     static let dmSansStatLabel   = Font.custom(DMSans.regular,  size: 18)
@@ -36,4 +39,8 @@ extension Font {
 
     
     static let dmSansAxis        = Font.custom(DMSans.regular,  size: 10)
+
+    static let dmSansBoldLarge   = Font.custom(DMSans.bold, size: 24)
+    static let dmSansBoldBody    = Font.custom(DMSans.bold, size: 16)
+    static let dmSansBoldSmall   = Font.custom(DMSans.bold, size: 14)
 }

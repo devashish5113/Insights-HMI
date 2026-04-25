@@ -78,10 +78,10 @@ struct InsightsView: View {
     private var navigationHeader: some View {
         ZStack {
             Text("Insights")
-                .font(.dmSansSectionHead)
+                .font(.dmSansNavigationHead)
                 .tracking(-20 * 0.02)
-                .lineSpacing(0)
                 .foregroundColor(.textPrimary)
+            
 
             HStack {
                 GridLogo()

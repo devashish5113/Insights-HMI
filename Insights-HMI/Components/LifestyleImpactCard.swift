@@ -69,13 +69,17 @@ struct LifestyleImpactCard: View {
             Text(row.label)
                 .font(.dmSansAxis)
                 .foregroundColor(.textPrimary)
-                .frame(width: 38, alignment: .leading)
+                .frame(width: 50, alignment: .leading)
 
             
             HStack(spacing: cellSpacing) {
                 ForEach(0..<row.totalCells, id: \.self) { idx in
                     RoundedRectangle(cornerRadius: cellRadius)
-                        .fill(idx < row.filledCells ? cellColor(for: row.color) : Color.heatmapEmpty)
+                        .fill(
+                            idx < row.filledCells
+                                ? AnyShapeStyle(cellGradient(for: row.color))
+                                : AnyShapeStyle(Color.heatmapEmpty)
+                        )
                         .frame(width: cellWidth, height: cellHeight)
                 }
             }
@@ -84,12 +88,45 @@ struct LifestyleImpactCard: View {
 
     
 
-    private func cellColor(for token: String) -> Color {
+    private func cellGradient(for token: String) -> LinearGradient {
         switch token {
-        case "lavender": return Color.lavenderSoft
-        case "salmon":   return Color.salmonPink
-        case "sage":     return Color.sagePrimary
-        default:         return Color.lavenderSoft
+        case "lavender":
+            return LinearGradient(
+                stops: [
+                    .init(color: Color(red: 180/255, green: 168/255, blue: 218/255),          location: 0.00),
+                    .init(color: Color(red: 180/255, green: 168/255, blue: 218/255, opacity: 0.34), location: 0.95)
+                ],
+                startPoint: .leading, endPoint: .trailing
+            )
+        case "salmon":
+            return LinearGradient(
+                stops: [
+                    .init(color: Color(red: 233/255, green: 149/255, blue: 151/255),          location: 0.005),
+                    .init(color: Color(red: 233/255, green: 149/255, blue: 151/255, opacity: 0.56), location: 0.993)
+                ],
+                startPoint: .leading, endPoint: .trailing
+            )
+        case "sage":
+            return LinearGradient(
+                stops: [
+                    .init(color: Color(red: 110/255, green: 140/255, blue: 130/255),          location: 0.00),
+                    .init(color: Color(red: 110/255, green: 140/255, blue: 130/255, opacity: 0.38), location: 0.95)
+                ],
+                startPoint: .leading, endPoint: .trailing
+            )
+        case "pink":
+            return LinearGradient(
+                stops: [
+                    .init(color: Color(red: 245/255, green: 195/255, blue: 196/255),          location: 0.00),
+                    .init(color: Color(red: 245/255, green: 195/255, blue: 196/255, opacity: 0.52), location: 1.00)
+                ],
+                startPoint: .leading, endPoint: .trailing
+            )
+        default:
+            return LinearGradient(
+                colors: [Color.lavenderSoft.opacity(0.7), Color.lavenderSoft],
+                startPoint: .leading, endPoint: .trailing
+            )
         }
     }
 }
