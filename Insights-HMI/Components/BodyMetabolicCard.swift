@@ -1,5 +1,3 @@
-
-
 import SwiftUI
 import Charts
 
@@ -44,8 +42,6 @@ struct BodyMetabolicCard: View {
         }
     }
 
-    
-
     private var periodToggle: some View {
         HStack(spacing: 0) {
             ForEach(Period.allCases, id: \.self) { period in
@@ -68,8 +64,6 @@ struct BodyMetabolicCard: View {
             }
         }
     }
-
-    
 
     private var weightChart: some View {
         Chart {

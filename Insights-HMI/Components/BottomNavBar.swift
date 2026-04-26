@@ -1,9 +1,6 @@
-
-
 import SwiftUI
 
 struct BottomNavBar: View {
-
     
     @Binding var selectedTab: Tab
 
@@ -12,7 +9,6 @@ struct BottomNavBar: View {
         case track    = "Track"
         case insights = "Insights"
     }
-
     
     private func iconName(for tab: Tab) -> String {
         switch tab {
@@ -21,7 +17,7 @@ struct BottomNavBar: View {
         case .insights: return "chart.bar"
         }
     }
-
+    
     var body: some View {
         HStack(spacing: 12) {
 
